@@ -1,0 +1,20 @@
+Skyblue			153, 221, 238
+Gold			255, 242,   0
+Dark gold		236, 224,   0
+Light gold		255, 251, 164
+Mid-light gold	255, 249, 117
+Rose			255, 176, 174
+Dark rose		255, 152, 149
+Light rose		255, 203, 202
+Border rose		149,   0,  49
+Reddish			255,  13,  91
+Dark reddish	242,   0,  79
+Light reddish	255,  60, 123
+Border reddish	217,   0,  70
+Blue			  0,   0, 255
+Light blue		 72,  72, 255
+Dark blue		  0,   0, 147
+cobalt			101, 101, 154
+Light cobalt	149, 149, 185
+Dark cobalt		 84,  84, 129
+Border cobalt	 38,  38,  60
