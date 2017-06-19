@@ -18,7 +18,7 @@ def addsubclass(newclass,superclass):
 		superclass.subclasses.add(newclass)
 
 class Entity(pg.sprite.Sprite,metaclass=classmaker):
-	image = util.loadimage("C:/Bee/dev/Rose/entity.bmp")
+	image = util.loadimage("images/entity.bmp")
 	basetimeout = 60
 	def __init__(self,game):
 		super().__init__()
@@ -46,7 +46,7 @@ class Entity(pg.sprite.Sprite,metaclass=classmaker):
 	def collidesubclasses(self,otherclass): return self.collideall(otherclass) + [i for c in otherclass.subclasses for i in c.group if self & i]
 
 class Player(Entity,metaclass=classmaker):
-	image = util.loadimage("C:/Bee/dev/Rose/player.bmp")
+	image = util.loadimage("images/player.bmp")
 	basespeed = 5
 	def __init__(self,game):
 		super().__init__(game)
@@ -94,12 +94,12 @@ class AngleBullet(Bullet,metaclass=classmaker):
 		self.check()
 
 class PistolBullet(Bullet,metaclass=classmaker):
-	image = util.loadimage("C:/Bee/dev/Rose/pistolbullet.bmp")
+	image = util.loadimage("images/pistolbullet.bmp")
 	damage = 10
 	basespeed = 10
 
 class MachineBullet(AngleBullet,metaclass=classmaker):
-	image = util.loadimage("C:/Bee/dev/Rose/machinebullet.bmp")
+	image = util.loadimage("images/machinebullet.bmp")
 	damage = 1
 	speed = 5
 	spread = math.radians(10)
@@ -111,7 +111,7 @@ class MachineBullet(AngleBullet,metaclass=classmaker):
 		super().__init__(gun)
 
 class RecoilOrbitBullet(AngleBullet,metaclass=classmaker):
-	image = util.loadimage("C:/Bee/dev/Rose/machinebullet.bmp")
+	image = util.loadimage("images/machinebullet.bmp")
 	damage = 3
 	speed = 10
 	def __init__(self,gun):
@@ -119,7 +119,7 @@ class RecoilOrbitBullet(AngleBullet,metaclass=classmaker):
 		super().__init__(gun)
 
 class AutoOrbitBullet(Bullet,metaclass=classmaker):
-	image = util.loadimage("C:/Bee/dev/Rose/machinebullet.bmp")
+	image = util.loadimage("images/machinebullet.bmp")
 	damage = 1
 	basespeed = 7
 
@@ -147,12 +147,12 @@ class Gun(Entity,metaclass=classmaker):
 	def move(self): self.rect.center = tools.addlists(self.player.rect.center,self.offset)
 
 class PistolGun(Gun,metaclass=classmaker):
-	image = util.loadimage("C:/Bee/dev/Rose/pistolgun.bmp")
+	image = util.loadimage("images/pistolgun.bmp")
 	firerate = 15
 	bullettype = PistolBullet
 
 class MachineGun(Gun,metaclass=classmaker):
-	image = util.loadimage("C:/Bee/dev/Rose/machinegun.bmp")
+	image = util.loadimage("images/machinegun.bmp")
 	firerate = 3
 	bullettype = MachineBullet
 
@@ -174,14 +174,14 @@ class OrbitGun(Gun,metaclass=classmaker):
 		self.reassignangles()
 
 class AutoOrbitGun(OrbitGun,metaclass=classmaker):
-	image = util.loadimage("C:/Bee/dev/Rose/machinegun.bmp")
+	image = util.loadimage("images/machinegun.bmp")
 	firerate = 7
 	av = math.radians(3)
 	radius = 50
 	bullettype = AutoOrbitBullet
 
 class RecoilOrbitGun(OrbitGun,metaclass=classmaker):
-	image = util.loadimage("C:/Bee/dev/Rose/recoilorbitgun.bmp")
+	image = util.loadimage("images/recoilorbitgun.bmp")
 	firerate = 2
 	aa = math.radians(0.15)
 	maxav = math.radians(9)
@@ -233,7 +233,7 @@ class Enemy(Entity,metaclass=classmaker):
 		self.kill()
 
 class GliderEnemy(Enemy,metaclass=classmaker):
-	image = util.loadimage("C:/Bee/dev/Rose/gliderenemy.bmp")
+	image = util.loadimage("images/gliderenemy.bmp")
 	basespeed = 3
 	health = 3
 	def __init__(self,game,x=None):
@@ -263,4 +263,4 @@ class Particle(Entity,metaclass=classmaker):
 		self.check()
 
 class EnemySpark(Particle,metaclass=classmaker):
-	image = util.loadimage("C:/Bee/dev/Rose/enemyspark.bmp")
+	image = util.loadimage("images/enemyspark.bmp")

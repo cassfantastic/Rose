@@ -38,7 +38,7 @@ def run():
 
 	pygame.init()
 	pygame.font.init()
-	Icon = pygame.image.load("C:/Bee/dev/Rose/player.bmp")
+	Icon = pygame.image.load("player.bmp")
 	pygame.display.set_icon(Icon)
 	pygame.display.set_caption("Rose configuration")
 	screen = pygame.display.set_mode((screenwidth,screenheight))

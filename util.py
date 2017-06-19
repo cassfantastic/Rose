@@ -12,4 +12,4 @@ def setalpha(image): image.set_colorkey(skyblue)
 
 def loadimage(path):
 	try: return setalpha(pg.image.load(path))
-	except pg.error: return loadimage("C:/Bee/dev/Rose/missing.bmp")
+	except pg.error: return loadimage("images/missing.bmp")
